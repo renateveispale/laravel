@@ -7,6 +7,6 @@
 </head>
 <body>
     <p>hello</p>
-    <p>new update</p>
+    <p>new updates</p>
 </body>
 </html>
