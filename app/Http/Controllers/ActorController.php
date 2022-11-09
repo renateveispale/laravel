@@ -15,8 +15,7 @@ class ActorController extends Controller
     public function index()
     {
         $res = Actor::all();
-        dd($res);
-        return view('new', ['title'=> 'actor, 'actor => $res']);
+        return view('new',['title'=>'actor',"actors"=>$res]);
     }
 
     /**

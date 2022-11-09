@@ -21,7 +21,7 @@ class CitiesController extends Controller
         else{
             $res = City::all();
         }
-        return view('cities', ['title'=> 'cities, 'cities => $res']);
+        return view('cities',['title'=>'cities',"cities"=>$res]);
     }
 
     /**
