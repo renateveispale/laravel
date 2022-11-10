@@ -14,6 +14,7 @@ class CitiesController extends Controller
      */
     public function index()
     {
+        
         $res = null;
         if(!empty($id)){
             $res = City::where("country_id",$id)->get();
@@ -24,6 +25,13 @@ class CitiesController extends Controller
         return view('cities',['title'=>'cities',"cities"=>$res]);
     }
 
+
+    public function getCountry($id){
+        $res = null;
+        $res = City::where("country_id",$id)->get();
+        return view('cities',['title'=>'cities',"cities"=>$res]);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
