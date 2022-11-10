@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-<table class="table table-striped">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
         <th>ID</th>
@@ -11,13 +11,22 @@
     </thead>
     <tbody>
         @foreach ($cities as $city)
-        <tr>
+        <tr onclick="city({{$city->country_id}})">
             <td>{{$city->city_id}}</td>
-            <td><a href="/cities/{{$city->country_id}}">{{$city->city}}</a></td>
-            <td>{{$city->country_id}}</td>
+            <td>{{$city->city}}</td>
+            <td><a href="/countries/{{$city->country_id}}">{{$city->country_id}}</a></td>
             <td>{{$city->last_update}}</td>
         </tr>
         @endforeach
     </tbody>
 </table>
+
+<script>
+    function city(id){
+        window.location="http://localhost:8000/cities/"+id;
+    }
+    function country(id){
+        window.location="http://localhost:8000/countries/"+id;
+    }
+</script>
 @endsection
