@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ActorController;
+use App\Http\Controllers\ChecklistController;
 use App\Http\Controllers\CitiesController;
 use App\Http\Controllers\CountriesController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [ChecklistController::class, 'index']);
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
 // Route::get('/actor', [ActorController::class, 'index']);
 // Route::get('/actor/{id}', [ActorController::class, 'index']);
 
@@ -28,4 +33,3 @@ Route::get('/cities/{id}', [CitiesController::class, 'getCountry']);
 
 Route::get('/countries',[CountriesController::class,'index']);
 Route::get('/countries/{id}',[CountriesController::class,'index']);
-//Route::get('/cities?id=:id',[CityController::class,'index',$id]);
